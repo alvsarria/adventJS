@@ -50,12 +50,13 @@ const createXmasTree = (height, ornament) => {
     const maxWidth = 1 + (2 * (height - 1));
     for (let i = 0; i < height; i++) {
         const numOrnaments = 1 + (2 * i);
-        const numSideCharacters = maxWidth - numOrnaments;
-        tree += '_'.repeat(numSideCharacters / 2) + ornament.repeat(numOrnaments) + '_'.repeat(numSideCharacters / 2) + '\n';
+        const numSideLeftCharacters = (maxWidth - numOrnaments) / 2;
+        tree += ornament.repeat(numOrnaments).padStart(numSideLeftCharacters + numOrnaments, '_').padEnd(maxWidth, '_') + '\n';
     };
-    tree += '_'.repeat((maxWidth - 1)/2) + '#' + '_'.repeat((maxWidth - 1)/2) + '\n' + '_'.repeat((maxWidth - 1)/2) + '#' + '_'.repeat((maxWidth - 1)/2)
+    const trunk = '#'.padStart(maxWidth / 2 + 1, '_').padEnd(maxWidth, '_');
+    tree += trunk + '\n' + trunk;
     return tree;
 };
 
-const tree3 = createXmasTree(6, '@')
-console.log(tree3)
+const tree3 = createXmasTree(6, '@');
+console.log(tree3);
