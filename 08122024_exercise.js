@@ -50,7 +50,7 @@ const drawRace = (indices, length) => {
             raceLane = `${'~'.repeat(length + indices[i])}r${'~'.repeat(indices[i] * - 1 - 1)}`;
         } else {
             raceLane = `${'~'.repeat(length)}`;
-        };
+        }
         race += `${' '.repeat(numRacers - i)}${raceLane} /${i + 1}\n`;
     };
     return race.replace(/\n+$/, "");
