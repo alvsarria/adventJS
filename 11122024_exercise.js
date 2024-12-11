@@ -1,3 +1,5 @@
+import checkPerformance from './performance.js';
+
 /* The Grinch has hacked 🏴‍☠️ Santa Claus's workshop systems and has encoded the names of all the important files. Now the elves can't find the original files and they need your help to decipher the names.
 
 Each file follows this format:
@@ -19,8 +21,6 @@ decodeFilename('42_chimney_dimensions.pdf.hack2023')
 `
 decodeFilename('987654321_elf-roster.csv.tempfile')
 // ➞ "elf-roster.csv" */
-
-import checkPerformance from './performance.js'
 
 const decodeFilename = (filename) => {
     return filename.slice(filename.indexOf('_') + 1, filename.lastIndexOf('.')); 
